@@ -3,7 +3,7 @@ CLXMLCONVERTER
 
 The Command Line Xml Converter (CLXMLConverter) is a  command line program which converts different text files in XML. It supports the conversion for Windows INI files and Linux configuration (*.conf) files. Moreover, users can convert custom files by defining their syntax in grammar files.
 
-OVERVIEW
+##OVERVIEW
 The CLXmlConverter uses the xerces-c++ library for building a DOM representation of the input files and for creating the XML output file. The xerces-c++ library is a C++ library which allows you to read and write XML files. More information at http://xerces.apache.org/xerces-c/.
 
 
@@ -57,7 +57,7 @@ fine
 @/primotag@
 
 the XML generated with by the program will be in the following form:
-
+```
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <root>
     <primotag>
@@ -66,27 +66,28 @@ the XML generated with by the program will be in the following form:
         </prova>fine
     </primotag>
 </root>
+```
 
-SETUP
+##SETUP
 Build xerces-c2.8 using the following instructions:
 
-cd <directory>
-wget http://mirror.switch.ch/mirror/apache/dist/xerces/c/2/sources/xerces-c-src_2_8_0.tar.gz
-tar -xvzf xerces-c-src_2_8_0.tar.gz
-cd xerces-c-src_2_8_0/
-export XERCESCROOT=<directory>/xerces-c-src_2_8_0
-cd src/xercesc
-./runConfigure -plinux -cgcc -xg++ -C--prefix=<install-dir> (i.e. /opt/ApacheXML)
-make
-make install
-set LD_LIBRARY_PATH=<destination-dir>/lib
+1. cd <directory>
+2. wget http://mirror.switch.ch/mirror/apache/dist/xerces/c/2/sources/xerces-c-src_2_8_0.tar.gz
+3. tar -xvzf xerces-c-src_2_8_0.tar.gz
+4. cd xerces-c-src_2_8_0/
+5. export XERCESCROOT=<directory>/xerces-c-src_2_8_0
+6. cd src/xercesc
+7. ./runConfigure -plinux -cgcc -xg++ -C--prefix=<install-dir> (i.e. /opt/ApacheXML)
+8. make
+9. make install
+10. set LD_LIBRARY_PATH=<destination-dir>/lib
 
 
 Re-set the XERCESCROOT to point to the xerces install directory ("<install-dir>")
 cd to the CLXmlConverter source directory
 Type "make" to compile the program
 
-USAGE
+##USAGE
 The CLXmlconverter program can be run in a bash shell by typing "./clxmlconverter [params]", using a sintax which will look familiar to any linux user. 
 The "params" will vary according to the type of the file to be converted. In particular:
 to convert a windows ini file into xml you should type:
