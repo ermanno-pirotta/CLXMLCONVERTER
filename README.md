@@ -12,7 +12,7 @@ From a high level point of view, a set of rules is an abstraction (implemented a
 
 When using a custom "grammatica", the grammar file defines the mapping between the text file and the XML file in terms of how the tag starts and ends and how the attributes are defined.
 For example, if we have the following grammar:
-
+```
 carattere pre-commento=#
 
 //element1
@@ -55,6 +55,7 @@ and the following input text file:
 fine
 
 @/primotag@
+```
 
 the XML generated with by the program will be in the following form:
 ```
@@ -91,11 +92,16 @@ Type "make" to compile the program
 The CLXmlconverter program can be run in a bash shell by typing "./clxmlconverter [params]", using a sintax which will look familiar to any linux user. 
 The "params" will vary according to the type of the file to be converted. In particular:
 to convert a windows ini file into xml you should type:
+```
 ./clxmlconverter -i <input_file_path> <output_file_path>
+```
 
 To convert a linux conf file into xml you should type:
+```
 ./clxmlconverter -c <input_file_path> <output_file_path>
+```
         
 To convert a file with a custom grammar you should type:
-
+```
 ./clxmlconverter -c <grammar_file_path><input_file_path> <output_file_path>
+```
